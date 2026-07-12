@@ -1,16 +1,7 @@
 .{
-    .name = .my_package, // TODO: change name
-    .version = "0.0.0",
+    .name = .my_project, // TODO change name
+    .version = "0.1.0",
     .minimum_zig_version = "0.16.0",
-
-    // TODO: run zig build and copy the suggested fingerprint
-
-    .dependencies = .{},
-
-    // paths to be redistributed by the zig package manager
-    .paths = .{
-        "build.zig",
-        "build.zig.zon",
-        "src",
-    },
+    .paths = .{}, // TODO: add paths
+    // TODO: generate fingerprint
 }
