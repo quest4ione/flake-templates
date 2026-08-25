@@ -1,13 +1,9 @@
 {
-  outputs = _: {
-    templates.parts = {
-      path = ./templates/parts;
-      description = "An empty flake using flake-parts";
-    };
-
-    templates.zig = {
-      path = ./templates/zig;
-      description = "A flake for using the zig language";
-    };
+  inputs = {
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    import-tree.url = "github:denful/import-tree";
   };
+
+  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; }
+    (inputs.import-tree ./flake);
 }
