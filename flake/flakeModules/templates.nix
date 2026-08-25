@@ -22,14 +22,15 @@ let
     options = {
       flake.templates = lib.mkOption {
         type = lib.types.attrsOf (lib.types.submodule templateSubmodule);
-        default = {};
+        default = { };
         description = "Templates for initializing a flake";
 
-        apply = templates: (lib.mapAttrs (_: template:
-          if template.welcomeText == null
-          then lib.removeAttrs template [ "welcomeText"]
-          else template
-        ) templates);
+        apply =
+          templates:
+          (lib.mapAttrs (
+            _: template:
+            if template.welcomeText == null then lib.removeAttrs template [ "welcomeText" ] else template
+          ) templates);
       };
     };
   };
