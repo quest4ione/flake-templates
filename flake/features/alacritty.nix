@@ -3,7 +3,7 @@
   perSystem =
     { self', pkgs, ... }:
     {
-      packages.alacritty = inputs.wrapper-modules.wrappers.alacritty.wrap {
+      packages.alacritty = inputs.nix-wrapper-modules.wrappers.alacritty.wrap {
         inherit pkgs;
 
         settings = {

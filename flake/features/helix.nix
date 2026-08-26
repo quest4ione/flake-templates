@@ -3,7 +3,7 @@
   perSystem =
     { pkgs, ... }:
     {
-      packages.helix = inputs.wrapper-modules.wrappers.helix.wrap {
+      packages.helix = inputs.nix-wrapper-modules.wrappers.helix.wrap {
         inherit pkgs;
 
         settings = {

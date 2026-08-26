@@ -18,7 +18,7 @@
   perSystem =
     { self', pkgs, ... }:
     {
-      packages.niri = inputs.wrapper-modules.wrappers.niri.wrap (
+      packages.niri = inputs.nix-wrapper-modules.wrappers.niri.wrap (
         let
           qs = lib.getExe pkgs.noctalia-qs;
           noctalia-shell-qml = "${pkgs.noctalia-shell}/share/noctalia-shell/shell.qml";
